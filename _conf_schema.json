@@ -5,7 +5,7 @@
     "description": "NewsAPI.org API Key，留空则跳过该源"
   },
   "max_items": {
-    "type": "number",
+    "type": "int",
     "default": 10,
     "description": "返回新闻条数上限"
   }
