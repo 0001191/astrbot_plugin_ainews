@@ -1,0 +1,12 @@
+{
+  "newsapi_key": {
+    "type": "string",
+    "default": "",
+    "description": "NewsAPI.org API Key，留空则跳过该源"
+  },
+  "max_items": {
+    "type": "number",
+    "default": 10,
+    "description": "返回新闻条数上限"
+  }
+}

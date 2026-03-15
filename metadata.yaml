@@ -1,0 +1,5 @@
+name: astrbot_plugin_ainews
+display_name: AI 新闻聚合
+desc: 即时聚合 Hugging Face 论文、NewsAPI、OpenAI/DeepMind RSS 等 AI 新闻源
+version: "1.0.0"
+author: AstrBot Community
