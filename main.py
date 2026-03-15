@@ -189,20 +189,17 @@ def _format_items(items: list[NewsItem], max_len: int = 4000) -> str:
     "1.0.0",
 )
 class AinewsPlugin(Star):
-    def __init__(self, context: Context) -> None:
+    def __init__(self, context: Context, config: dict | None = None) -> None:
         super().__init__(context)
         self._max_items = DEFAULT_MAX_ITEMS
         self._newsapi_key = ""
+        if isinstance(config, dict):
+            self._max_items = int(config.get("max_items") or DEFAULT_MAX_ITEMS)
+            self._newsapi_key = (config.get("newsapi_key") or "").strip()
+        self._max_items = max(1, min(30, self._max_items))
 
     async def initialize(self) -> None:
-        try:
-            conf = self.context.config.get_plugin_config(self.context.package_name)
-            if isinstance(conf, dict):
-                self._max_items = int(conf.get("max_items") or DEFAULT_MAX_ITEMS)
-                self._newsapi_key = (conf.get("newsapi_key") or "").strip()
-        except Exception as e:
-            logger.warning("ainews: load config failed: %s", e)
-        self._max_items = max(1, min(30, self._max_items))
+        pass
 
     @filter.command("ainews")
     async def cmd_ainews(self, event: AstrMessageEvent) -> None:
