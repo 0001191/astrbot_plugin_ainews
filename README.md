@@ -23,6 +23,4 @@
 
 ## 安装
 
-在 AstrBot 内使用：`plugin i https://github.com/123456342g-lang/astrbot_plugin_ainews`
-
-（若需首次推送代码，请在终端用仓库所属账号 123456342g-lang 登录 git 后执行：`git push -u origin main`。）
+在 AstrBot 内使用：`plugin i https://github.com/0001191/astrbot_plugin_ainews`
